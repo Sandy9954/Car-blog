@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        .featured-post {
+            background-image: url('https://images.free3d.com/imgd/l88796-bugatti-chiron-2017-model-31847.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<header class="blog-header py-3 bg-dark text-light">
+    <div class="container">
+        <div class="d-flex flex-wrap justify-content-between align-items-center">
+            <h1 class="h3 mb-0">My CAR Blog</h1>
+            <nav>
+              <a href="{{url_for('home')}}" class="text-light me-3">HOME</a>
+                <a href="{{url_for('login')}}" class="text-light me-3">LOGIN</a>
+                <a href="{{url_for('register')}}" class="text-light me-3">REGISTER</a>
+
+            </nav>
+        </div>
+    </div>
+</header>
+

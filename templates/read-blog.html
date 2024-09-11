@@ -1,0 +1,34 @@
+{% from "bootstrap5/form.html" import render_form %}
+{% include "headerblog.html" %}
+
+<div class="row align-items-center">
+    <div class="col-md-4">
+        <img src="{{ blog.img_url }}" class="img-fluid rounded mb-4" alt="{{ blog.car_name }}">
+    </div>
+    <div class="col-md-8">
+        <div class="p-4 bg-white text-dark rounded">
+            <h2>{{ blog.car_name }}</h2>
+            <p><strong>Company:</strong> {{ blog.car_company }}</p>
+            <p><strong>Time to reach 200 km/h:</strong> {{ blog.Time }}</p>
+            <p><strong>Top Speed:</strong> {{ blog.max_speed }}</p>
+            <p><strong>Engine:</strong> {{ blog.engine }}</p>
+            <p><strong>Power Output:</strong> {{ blog.power }}</p>
+
+            <!-- Edit Button -->
+            {% if current_user.id == 1 %}
+            <a href="{{ url_for('edit', id=blog.id) }}" class="btn btn-warning mt-3">Edit</a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<div class="mt-4">
+    <div class="p-4 bg-light text-dark rounded">
+        <h3>About the Car</h3>
+        <div style="font-size: 1.1rem; line-height: 1.7;">
+            {{ blog.blog | safe }}
+        </div>
+    </div>
+</div>
+
+{% include "footerblog.html" %}

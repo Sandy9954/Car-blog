@@ -1,0 +1,23 @@
+{% from "bootstrap5/form.html" import render_form %}
+{% block content %}
+
+    {% include "header.html" %}
+
+<br>
+<main class="mb-4">
+  <div class="container">
+    <div class="row justify-content-center"> <!-- Center the form -->
+      <div class="col-lg-6 col-md-8"> <!-- Adjust column width for better form focus -->
+        <div class="card shadow-lg p-4"> <!-- Add a card with shadow and padding for visual enhancement -->
+          <h3 class="card-title text-center mb-4">REGISTER</h3> <!-- Centered and styled title -->
+          <!-- Rendering the registration form here -->
+          {{ render_form(form, novalidate=True, button_map={"submit": "primary"}) }}
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<hr>
+
+{% include "footer.html" %}
+{% endblock %}
